@@ -30,8 +30,9 @@ def savings(gross_pay, tax_rate, expenses):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
   
 
-
-return total = int(gross_pay-(gross_pay*tax_rate)-expenses)
+    after_tax_pay = int(gross_pay * (1 - tax_rate))
+    remaining_pay = after_tax_pay - expenses
+    return remaining_pay
 
 
 
@@ -64,10 +65,10 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-
-
-
- return total_material = int(total_material-(job_consumption*num_jobs))
+   
+    total_consumption = num_jobs * job_consumption
+    remaining_material = total_material - total_consumption
+    return f"{remaining_material}{material_units}"
 
 
 
@@ -95,12 +96,9 @@ def interest(principal, rate, periods):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-principal = int(1000)
-rate = float(0.1)
-periods = int(5)
-
-final_value = int(principal+(principal*rate*periods))
-print ("The final value of the investment is" ,final_value)
+    interest_gained = principal * rate * periods
+    final_value = principal + interest_gained
+    return int(final_value)
 
 
 def body_mass_index(weight, height):
@@ -131,8 +129,7 @@ def body_mass_index(weight, height):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
 
-weight_kg = float(weight*0.453592)
-
-
-return BMI = (weight_kg/((height[0]*0.3048+height[1]*0.0254)*(height[0]*0.3048+height[1]*0.0254)))
-
+    weight_kg = weight * 0.453592
+    height_m = (height[0] * 12 + height[1]) * 0.0254
+    bmi = weight_kg / (height_m ** 2)
+    return bmi
